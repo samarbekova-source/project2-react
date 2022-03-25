@@ -1,4 +1,7 @@
+// import { Footer, Header } from "antd/lib/layout/layout";
 import React from "react";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import ProductsList from "./components/ProductList/ProductsList";
@@ -28,6 +31,7 @@ const Routing = () => {
   ];
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         {PUBLIC_ROUTES.map((item) => (
           <Route key={item.id} path={item.link} element={item.element} />
@@ -38,7 +42,7 @@ const Routing = () => {
         ))}
         <Route path="*" element={<Error404 />} />
       </Routes>
-      
+      <Footer />
     </BrowserRouter>
   );
 };
