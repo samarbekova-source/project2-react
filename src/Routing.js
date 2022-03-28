@@ -7,6 +7,8 @@ import Home from "./components/Home/Home";
 import ProductsList from "./components/ProductList/ProductsList";
 import AdminPages from "./pages/AdminPages";
 import Error404 from "./pages/Error404";
+import Details from "./components/Details/Details";
+import EditProduct from "./components/EditProduct/EditProduct";
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -20,6 +22,11 @@ const Routing = () => {
       element: <ProductsList />,
       id: 2,
     },
+    {
+      link: "products/:id",
+      element: <Details />,
+      id: 3,
+    },
   ];
 
   let ADMIN_ROUTES = [
@@ -27,6 +34,11 @@ const Routing = () => {
       link: "/admin",
       element: <AdminPages />,
       id: 1,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProduct />,
+      id: 2,
     },
   ];
   return (
